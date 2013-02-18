@@ -45,7 +45,7 @@ template "/etc/rsyslog.d/99-loggly.conf" do
   source "99-loggly.conf.erb"
   variables(
     :logging_host => node['loggly-rsyslog']['logging_host'],
-    :tcp_port     => node['loggly-rsyslog']['tcp_port'],
+    :tcp_port     => node['loggly-rsyslog']['tcp_port']
   )
   notifies :restart, 'service[rsyslog]', :immediately
 end
